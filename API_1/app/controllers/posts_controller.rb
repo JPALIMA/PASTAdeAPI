@@ -1,4 +1,4 @@
-class PostController < ApplicationController
+class PostController < ApplicatioController
      def index
           posts = Post.all
           render json: posts
@@ -24,3 +24,5 @@ class PostController < ApplicationController
           params.require(:post).permit(:title, :content)
      end
 end
+
+
