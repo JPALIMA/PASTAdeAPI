@@ -1,4 +1,4 @@
-class PostController < ApplicatioController
+class PostController < ApplicationController
      def index
           posts = Post.all
           render json: posts
@@ -16,7 +16,7 @@ class PostController < ApplicatioController
           end
      end
 
-     #outras acçoes (update, delete) podem ser adicionadas
+     #Outras ações (update, delete) podem ser adicionadas aqui
 
      private
 
@@ -24,4 +24,3 @@ class PostController < ApplicatioController
           params.require(:post).permit(:title, :content)
      end
 end
-
