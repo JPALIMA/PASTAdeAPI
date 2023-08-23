@@ -16,7 +16,7 @@ class PostController < ApplicatioController
           end
      end
 
-     #Outras açoes (update, delete) podem ser adicionadas aqui
+     #outras acçoes (update, delete) podem ser adicionadas
 
      private
 
@@ -24,5 +24,4 @@ class PostController < ApplicatioController
           params.require(:post).permit(:title, :content)
      end
 end
-
 
