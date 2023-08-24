@@ -1,4 +1,4 @@
-class TasksController < ApplicatioController
+class TasksController < ApplicationController
      def index
           tasks = Task.all
           render json: tasks
@@ -12,7 +12,7 @@ class TasksController < ApplicatioController
      def create
           task = Task.new(task_params)
           if task.save
-               render json: task, status: :created
+               render json:task, status: :created
           else
                render json: task.errors, status: :unprocessable_entity
           end
