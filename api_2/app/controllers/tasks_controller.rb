@@ -1,15 +1,10 @@
-class TasksController < ApplicationController
+class TasksController < ApplicatioController
      def index
           tasks = Task.all
           render json: tasks
      end
 
      def show
-          task = Task.find(params[:id])
-          render json: task
-     end
-
-     def create
           task = Task.find(params[:id])
           render json: task
      end
@@ -44,3 +39,4 @@ class TasksController < ApplicationController
           params.require(:task).permit(:title, :completed)
      end
 end
+
