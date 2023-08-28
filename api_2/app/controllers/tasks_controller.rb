@@ -27,7 +27,7 @@ class TasksController < ApplicationController
           end
      end
 
-     def destroy
+     def update
           task = Task.find(params[:id])
           task.destroy
           head :no_content
@@ -39,4 +39,3 @@ class TasksController < ApplicationController
           params.require(:task).permit(:title, :completed)
      end
 end
-
