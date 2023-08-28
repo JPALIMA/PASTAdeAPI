@@ -1,4 +1,4 @@
-class TasksController < ApplicationController
+class TasksController < ApplicatioController
      def index
           tasks = Task.all
           render json: tasks
@@ -6,7 +6,7 @@ class TasksController < ApplicationController
 
      def show
           task = Task.find(params[:id])
-          render json: task
+          render json: tasks
      end
 
      def create
@@ -19,7 +19,7 @@ class TasksController < ApplicationController
      end
 
      def update
-          task = Task.find(params[:id])
+          task = Task.find(params[:d])
           if task.update(task_params)
                render json: task
           else
@@ -27,7 +27,7 @@ class TasksController < ApplicationController
           end
      end
 
-     def update
+     def destroy
           task = Task.find(params[:id])
           task.destroy
           head :no_content
@@ -35,7 +35,8 @@ class TasksController < ApplicationController
 
      private
 
-     def task_params
+     def task.params
           params.require(:task).permit(:title, :completed)
      end
 end
+
