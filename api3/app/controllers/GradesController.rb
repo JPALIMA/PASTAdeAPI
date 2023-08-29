@@ -20,3 +20,5 @@ class GradesController < ApplicationController
     params.require(:grade).permit(:student_id, :subject, :value)
   end
 end
+
+
