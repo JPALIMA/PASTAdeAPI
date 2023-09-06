@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :update, :destroy]
 
-  #GET/tasks
+  #get/tasks
   def index
     @tasks = Task.all
     render json: @tasks
@@ -12,20 +12,20 @@ class TasksController < ApplicationController
     render json: @task
   end
 
-  #Post/tasks
+  #post/tasks
   def create
-    @task = Task.new(task_params)
+    @task = Task.new(task.params)
 
     if @task.save
       render json: @task, status: :created, location: @task
     else
-      render json: @task.errors. status: :unprocessable entity
+      render json: @task.errors, status: :unprocessable_entity
     end
   end
 
-  #PATCH/PUT/tasks/1
+  #patch
   def update
-    if @task.update(task params)
+    if @task.update(task_params)
       render json: @task
     else
       render json: @task.errors, status: :unprocessable_entity
@@ -34,10 +34,14 @@ class TasksController < ApplicationController
 
   #delete
   def destroy
+    @task.destroy
+  end
+
+  def set_task
     @task = Task.find(params[:id])
   end
 
-  def task params
+  def task_params
     params.require(:task).permit(:title, :description, :completed)
   end
 end
