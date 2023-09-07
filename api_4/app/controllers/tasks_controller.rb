@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   #get/tasks
   def index
     @tasks = Task.all
-    render json: @tasks
+    render json: tasks
   end
 
   #get/tasks/1
@@ -23,7 +23,7 @@ class TasksController < ApplicationController
     end
   end
 
-  #patch/put/tasks/1
+  #path/put/tasks/1
   def update
     if @task.update(task_params)
       render json: @task
@@ -47,5 +47,3 @@ class TasksController < ApplicationController
     params.require(:task).permit(:title, :description, :completed)
   end
 end
-
-
