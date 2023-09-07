@@ -7,14 +7,14 @@ class TasksController < ApplicationController
     render json: @tasks
   end
 
-  #GET/tasks/1
+  #get/tasks/1
   def show
     render json: @task
   end
 
   #post/tasks
   def create
-    @task = Task.new(task.params)
+    @task = Task.new(task_params)
 
     if @task.save
       render json: @task, status: :created, location: @task
@@ -23,7 +23,7 @@ class TasksController < ApplicationController
     end
   end
 
-  #patch
+  #patch/put/tasks/1
   def update
     if @task.update(task_params)
       render json: @task
@@ -32,10 +32,12 @@ class TasksController < ApplicationController
     end
   end
 
-  #delete
+  #delete/tasks/1
   def destroy
     @task.destroy
   end
+
+  private
 
   def set_task
     @task = Task.find(params[:id])
