@@ -7,7 +7,7 @@ class TasksController < ApplicationController
 
      #autenticação do usuário e geração de token JWT
      def authenticate_user
-          username = params[:usename]
+          username = params[:username]
           password = params[:password]
 
           token = authenticate(username, password)
