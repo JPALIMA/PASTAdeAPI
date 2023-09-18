@@ -25,7 +25,7 @@ class TasksController < ApplicationController
 
   #path/put
   def update
-    if @task.update(task-params)
+    if @task.update(task_params)
       render json: @task
     else
       render json: @task.errors, status: :unprocessable_entity
@@ -36,7 +36,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
   end
-
+  
   private
 
   def set_task
@@ -47,4 +47,3 @@ class TasksController < ApplicationController
     params.require(:task).permit(:title, :description, :completed)
   end
 end
-
