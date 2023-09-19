@@ -9,7 +9,7 @@ class TasksController < ApplicationController
 
   #get/tasks
   def show
-    render json: @task
+    render json: @Task
   end
 
   #post/tasks
@@ -36,7 +36,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
   end
-  
+
   private
 
   def set_task
@@ -47,3 +47,6 @@ class TasksController < ApplicationController
     params.require(:task).permit(:title, :description, :completed)
   end
 end
+
+
+    
