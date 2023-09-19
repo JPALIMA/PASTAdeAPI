@@ -1,4 +1,4 @@
-#app/Controllers/grades_controller.rb
+#app/controllers/grades_controller.rb
 class GradesController < ApplicationController
   def index
     grades = Grade.all
@@ -10,7 +10,7 @@ class GradesController < ApplicationController
     if grade.save
       render json: grade, status: :created
     else
-      render json: grade.errors, status: :unprocessable_entity
+      render json: grande.errors, status: :unprocessable_entity
     end
   end
 
