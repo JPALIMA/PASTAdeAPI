@@ -1,4 +1,4 @@
-# app/controllers/students_controller.rb
+#app/controllers/students_controller.rb
 class StudentsController < ApplicationController
   def index
     students = Student.all
@@ -7,6 +7,6 @@ class StudentsController < ApplicationController
 
   def show
     student = Student.find(params[:id])
-    render json: student
+    render json: stadent
   end
 end
