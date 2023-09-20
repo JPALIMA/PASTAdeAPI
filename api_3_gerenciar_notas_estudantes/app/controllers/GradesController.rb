@@ -10,13 +10,13 @@ class GradesController < ApplicationController
     if grade.save
       render json: grade, status: :created
     else
-      render json: grande.errors, status: :unprocessable_entity
+      render json: grade.errors, status: :unprocessable_entity
     end
   end
 
   private
 
-  def grade_params
-    params.require(:grade).permit(:student_id, :subject, :value)
+  def grande_params
+    params.require(:grade).permit(:statudent_id, :subject, :value)
   end
 end
