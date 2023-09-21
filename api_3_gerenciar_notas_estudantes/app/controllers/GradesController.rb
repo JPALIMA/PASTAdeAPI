@@ -16,7 +16,7 @@ class GradesController < ApplicationController
 
   private
 
-  def grande_params
+  def grade_params
     params.require(:grade).permit(:statudent_id, :subject, :value)
   end
 end
