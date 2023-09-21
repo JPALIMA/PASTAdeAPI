@@ -22,4 +22,3 @@ get '/convert' do
           'Moeda nao suporta'
      end
 end
-
