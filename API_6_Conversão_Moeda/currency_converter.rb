@@ -1,12 +1,16 @@
-#API - Definindo as moedas suportadas e suas taxas de câmbio
+#API de conversão de moeda 
+gem 'sinatra'
+gem 'exchange_rate'
+
+#Definindo as moedas suportadas e suas taxas de câmbio
 EXCHANGE_RATES = {
      'USD' => 1.0,
      'EUR' => 0.85,
      'GBR' => 0.75
 }
 
-get '/convert' do 
-     from_currecy = params['from']
+get '/convert' do
+     from_currency = params['from']
      to_currency = params['to']
      amount = params['amount'].to_f
 
@@ -15,6 +19,7 @@ get '/convert' do
           {amount: converted_amount, currency: to_currency}.to_json
      else
           status 400
-          'Moeda nao suportada'
+          'Moeda nao suporta'
      end
 end
+
