@@ -1,12 +1,12 @@
 #app/controllers/students_controller.rb
-class StudentsController < ApplicationController
+class StudentController < ApplicationController
   def index
     students = Student.all
     render json: students
   end
-
-  def show
+  
+  def show 
     student = Student.find(params[:id])
-    render json: stadent
+    render json: student
   end
 end
