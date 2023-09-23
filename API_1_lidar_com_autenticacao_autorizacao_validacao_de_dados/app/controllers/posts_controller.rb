@@ -16,7 +16,7 @@ class PostController < ApplicationController
           end
      end
 
-     #Outras ações (update, delete) podem ser adicionadas aqui
+     #Outras ações (update, delete) podem ser adionadas aqui
 
      private
 
