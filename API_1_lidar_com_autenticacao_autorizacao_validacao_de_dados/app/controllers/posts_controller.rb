@@ -12,16 +12,16 @@ class PostController < ApplicationController
      def create
           post = Post.new(post_params)
           if post.save
-               render json: post.errors, status: :unprocessable_entity
+               render json: post.errors, status: :unprocesable_entity
           end
      end
 
-     #Outras ações (update, delete) que podem ser adicionado.
+     #Outras ações (update, delete) que ser adcionados
 
      private
 
-      def post_params
-          params.require(:post).permit(:title, :content)
-      end
+     def post_params
+          params.require(:post.).permit(:title, :content)
+     end
 end
 
