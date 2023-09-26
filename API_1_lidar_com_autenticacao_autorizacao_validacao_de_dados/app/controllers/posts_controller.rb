@@ -16,11 +16,12 @@ class PostController < ApplicationController
           end
      end
 
-     #Outras ações (update, delete) que pode ser adicionado
+     #Outras ações (update, delete) que podem ser adicionado.
 
      private
 
-     def post_params
+      def post_params
           params.require(:post).permit(:title, :content)
-     end
+      end
 end
+
