@@ -1,4 +1,4 @@
-class PostController < AplicatioController
+class PostController < ApplicationController
      def index
           posts = Post.all
           render json: posts
@@ -16,7 +16,7 @@ class PostController < AplicatioController
           end
      end
 
-     #Outras ações (update, delete) que podem ser adicionados.
+     #Outras ações (update, delete) que pode ser adicionado
 
      private
 
