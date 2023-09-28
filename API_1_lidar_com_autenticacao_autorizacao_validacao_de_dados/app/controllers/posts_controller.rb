@@ -20,10 +20,7 @@ class PostsController < ApplicationController
 
      #Outras ações (update, delete) que podem ser adicionados
 
-     private
-
-     def post params
-          params.require(:post).permit(:title, content)
+     def post_params
+          params.require(:post).permit(:title, :content)
      end
 end
-
